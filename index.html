@@ -8,7 +8,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
       --brown:       #5C3317;
@@ -36,7 +41,6 @@
       overflow-x: hidden;
     }
 
-    /* ─── NOISE TEXTURE OVERLAY ─── */
     body::before {
       content: '';
       position: fixed;
@@ -69,6 +73,7 @@
       flex-direction: column;
       line-height: 1.1;
     }
+
     .nav-logo span:first-child {
       font-family: var(--serif);
       font-size: 22px;
@@ -76,6 +81,7 @@
       color: var(--brown-dark);
       letter-spacing: 0.04em;
     }
+
     .nav-logo span:last-child {
       font-family: var(--sans);
       font-size: 10px;
@@ -90,6 +96,7 @@
       gap: 36px;
       list-style: none;
     }
+
     .nav-links a {
       font-family: var(--sans);
       font-size: 12px;
@@ -101,10 +108,13 @@
       transition: color 0.2s;
       position: relative;
     }
+
     .nav-links a::after {
       content: '';
       position: absolute;
-      bottom: -3px; left: 0; right: 0;
+      bottom: -3px;
+      left: 0;
+      right: 0;
       height: 1px;
       background: var(--gold);
       transform: scaleX(0);
@@ -123,8 +133,10 @@
     }
     .nav-cta:hover { background: var(--brown-dark) !important; color: var(--gold) !important; }
     .nav-cta::after { display: none !important; }
+    .nav-hamburger { display: none; }
 
     /* ─── HERO ─── */
+
     .hero {
       min-height: 100vh;
       display: grid;
@@ -151,6 +163,7 @@
       opacity: 0;
       animation: fadeUp 0.8s 0.2s forwards;
     }
+
     .hero-eyebrow span {
       font-family: var(--sans);
       font-size: 11px;
@@ -159,6 +172,7 @@
       text-transform: uppercase;
       color: var(--gold);
     }
+
     .hero-eyebrow::before {
       content: '';
       display: block;
@@ -177,6 +191,7 @@
       opacity: 0;
       animation: fadeUp 0.8s 0.35s forwards;
     }
+
     .hero-title em {
       font-style: italic;
       color: var(--brown);
@@ -232,7 +247,12 @@
       text-decoration: none;
       transition: gap 0.2s, color 0.2s;
     }
-    .btn-ghost svg { width: 18px; height: 18px; transition: transform 0.2s; }
+
+    .btn-ghost svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.2s;
+    }
     .btn-ghost:hover { color: var(--gold); gap: 16px; }
     .btn-ghost:hover svg { transform: translateX(4px); }
 
@@ -245,10 +265,8 @@
       opacity: 0;
       animation: fadeUp 0.8s 0.8s forwards;
     }
-    .badge {
-      display: flex;
-      flex-direction: column;
-    }
+    .badge { display: flex; flex-direction: column; }
+
     .badge-num {
       font-family: var(--serif);
       font-size: 36px;
@@ -256,6 +274,7 @@
       color: var(--brown);
       line-height: 1;
     }
+
     .badge-label {
       font-family: var(--sans);
       font-size: 11px;
@@ -264,11 +283,7 @@
       color: var(--text-light);
       margin-top: 4px;
     }
-
-    .hero-right {
-      position: relative;
-      overflow: hidden;
-    }
+    .hero-right { position: relative; overflow: hidden; }
 
     .hero-image-grid {
       position: absolute;
@@ -282,6 +297,7 @@
       position: relative;
       overflow: hidden;
     }
+
     .hero-img-main::after {
       content: '';
       position: absolute;
@@ -289,67 +305,13 @@
       background: linear-gradient(135deg, rgba(201,168,76,0.15) 0%, transparent 60%);
     }
 
-    /* Pâtisserie visuals via CSS art */
-    .pastry-visual {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: linear-gradient(145deg, #F0D9B5 0%, #E8C98A 40%, #D4A855 100%);
-      position: relative;
-      overflow: hidden;
-    }
-    .pastry-visual::before {
-      content: '';
-      position: absolute;
-      top: -30%; right: -20%;
-      width: 80%;
-      height: 80%;
-      background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-    .pastry-plate {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      background: linear-gradient(145deg, #FDF6EC, #F5E6CE);
-      box-shadow: 0 20px 60px rgba(59,31,10,0.25), inset 0 2px 8px rgba(255,255,255,0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      animation: float 4s ease-in-out infinite;
-    }
-    .pastry-plate::before {
-      content: '';
-      position: absolute;
-      inset: 12px;
-      border-radius: 50%;
-      border: 1px solid rgba(201,168,76,0.4);
-    }
-    .pastry-emoji {
-      font-size: 44px;
-      filter: drop-shadow(0 4px 12px rgba(59,31,10,0.2));
-    }
-    .floating-elements { position: absolute; inset: 0; pointer-events: none; }
-    .float-item {
-      position: absolute;
-      font-size: 32px;
-      opacity: 0.6;
-      animation: floatRandom 6s ease-in-out infinite;
-    }
-    .float-item:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; font-size: 28px; }
-    .float-item:nth-child(2) { top: 20%; right: 15%; animation-delay: 1.5s; font-size: 24px; }
-    .float-item:nth-child(3) { bottom: 25%; left: 15%; animation-delay: 3s; font-size: 22px; }
-    .float-item:nth-child(4) { bottom: 20%; right: 10%; animation-delay: 0.8s; font-size: 26px; }
-
     .hero-img-bottom {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 3px;
       background: var(--brown-dark);
     }
+
     .hero-img-thumb {
       background: var(--beige-mid);
       display: flex;
@@ -362,10 +324,13 @@
       cursor: pointer;
       position: relative;
     }
+
     .hero-img-thumb::after {
       content: attr(data-label);
       position: absolute;
-      bottom: 0; left: 0; right: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
       background: rgba(59,31,10,0.75);
       color: var(--gold);
       font-family: var(--sans);
@@ -379,10 +344,9 @@
       transition: transform 0.3s;
     }
     .hero-img-thumb:hover::after { transform: translateY(0); }
-    .hero-img-thumb:nth-child(1) { background: linear-gradient(135deg, #E8C98A, #D4A855); }
-    .hero-img-thumb:nth-child(2) { background: linear-gradient(135deg, #C8906A, #A06040); }
 
     /* ─── GOLD BAND ─── */
+
     .gold-band {
       background: var(--brown-dark);
       padding: 18px 80px;
@@ -392,13 +356,20 @@
       gap: 40px;
       overflow: hidden;
     }
+
     .gold-band-item {
       display: flex;
       align-items: center;
       gap: 12px;
       flex-shrink: 0;
     }
-    .gold-band-item svg { color: var(--gold); width: 18px; height: 18px; }
+
+    .gold-band-item svg {
+      color: var(--gold);
+      width: 18px;
+      height: 18px;
+    }
+
     .gold-band-item span {
       font-family: var(--sans);
       font-size: 12px;
@@ -407,6 +378,7 @@
       text-transform: uppercase;
       color: var(--beige);
     }
+
     .gold-band-sep {
       width: 1px;
       height: 20px;
@@ -423,6 +395,7 @@
       gap: 14px;
       margin-bottom: 20px;
     }
+
     .section-eyebrow::before {
       content: '';
       display: block;
@@ -430,6 +403,7 @@
       height: 1px;
       background: var(--gold);
     }
+
     .section-eyebrow span {
       font-family: var(--sans);
       font-size: 11px;
@@ -449,6 +423,7 @@
     .section-title em { font-style: italic; color: var(--brown); }
 
     /* ─── HISTOIRE ─── */
+
     .histoire {
       background: var(--white);
       display: grid;
@@ -456,14 +431,12 @@
       gap: 80px;
       align-items: center;
     }
+    .histoire-visual { position: relative; height: 520px; }
 
-    .histoire-visual {
-      position: relative;
-      height: 520px;
-    }
     .histoire-img-main {
       position: absolute;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       width: 75%;
       height: 80%;
       background: linear-gradient(145deg, var(--beige), var(--beige-mid));
@@ -473,10 +446,13 @@
       justify-content: center;
       font-size: 80px;
       box-shadow: 0 20px 60px rgba(59,31,10,0.12);
+      overflow: hidden;
     }
+
     .histoire-img-secondary {
       position: absolute;
-      bottom: 0; right: 0;
+      bottom: 0;
+      right: 0;
       width: 55%;
       height: 55%;
       background: var(--brown);
@@ -486,10 +462,13 @@
       justify-content: center;
       font-size: 48px;
       box-shadow: 0 12px 40px rgba(59,31,10,0.2);
+      overflow: hidden;
     }
+
     .histoire-badge {
       position: absolute;
-      top: 50%; left: 50%;
+      top: 50%;
+      left: 50%;
       transform: translate(-50%, -50%);
       background: var(--cream);
       border: 1px solid var(--gold);
@@ -498,6 +477,7 @@
       box-shadow: 0 8px 32px rgba(59,31,10,0.15);
       z-index: 2;
     }
+
     .histoire-badge-num {
       font-family: var(--serif);
       font-size: 48px;
@@ -505,6 +485,7 @@
       color: var(--brown);
       line-height: 1;
     }
+
     .histoire-badge-label {
       font-family: var(--sans);
       font-size: 10px;
@@ -514,8 +495,8 @@
       color: var(--text-light);
       margin-top: 4px;
     }
-
     .histoire-content { padding: 20px 0; }
+
     .histoire-content p {
       font-family: var(--sans);
       font-size: 15px;
@@ -538,6 +519,7 @@
 
     /* ─── CRÉATIONS ─── */
     .creations { background: var(--cream); }
+
     .creations-header {
       display: flex;
       align-items: flex-end;
@@ -552,6 +534,7 @@
       padding: 4px;
       border-radius: 3px;
     }
+
     .filter-tab {
       font-family: var(--sans);
       font-size: 11px;
@@ -566,14 +549,8 @@
       cursor: pointer;
       transition: background 0.2s, color 0.2s;
     }
-    .filter-tab.active {
-      background: var(--brown);
-      color: var(--cream);
-    }
-    .filter-tab:hover:not(.active) {
-      background: var(--beige-mid);
-      color: var(--brown);
-    }
+    .filter-tab.active { background: var(--brown); color: var(--cream); }
+    .filter-tab:hover:not(.active) { background: var(--beige-mid); color: var(--brown); }
 
     .creations-grid {
       display: grid;
@@ -585,16 +562,11 @@
       background: var(--white);
       border-radius: 2px;
       overflow: hidden;
-      transition: transform 0.3s, box-shadow 0.3s;
       cursor: pointer;
+      transition: transform 0.3s, box-shadow 0.3s, opacity 0.35s, filter 0.35s;
     }
-    .product-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 24px 60px rgba(59,31,10,0.12);
-    }
-    .product-card:first-child {
-      grid-column: span 2;
-    }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 24px 60px rgba(59,31,10,0.12); }
+    .product-card:first-child { grid-column: span 2; }
 
     .product-img {
       height: 280px;
@@ -606,22 +578,22 @@
       overflow: hidden;
     }
     .product-card:first-child .product-img { height: 360px; font-size: 96px; }
+
     .product-img::after {
       content: '';
       position: absolute;
       inset: 0;
       background: linear-gradient(to top, rgba(59,31,10,0.25) 0%, transparent 50%);
     }
-
     .product-img-1 { background: linear-gradient(145deg, #F0D9B5, #E8C98A); }
     .product-img-2 { background: linear-gradient(145deg, #8B4513, #5C3317); }
     .product-img-3 { background: linear-gradient(145deg, #E8E0D5, #D4C5B0); }
     .product-img-4 { background: linear-gradient(145deg, #C8A882, #A07850); }
-    .product-img-5 { background: linear-gradient(145deg, #F5E6CE, #EDD6B0); }
 
     .product-tag {
       position: absolute;
-      top: 16px; right: 16px;
+      top: 16px;
+      right: 16px;
       background: var(--gold);
       color: var(--brown-dark);
       font-family: var(--sans);
@@ -633,10 +605,8 @@
       border-radius: 2px;
       z-index: 1;
     }
+    .product-body { padding: 24px 28px; }
 
-    .product-body {
-      padding: 24px 28px;
-    }
     .product-cat {
       font-family: var(--sans);
       font-size: 10px;
@@ -646,6 +616,7 @@
       color: var(--gold);
       margin-bottom: 8px;
     }
+
     .product-name {
       font-family: var(--serif);
       font-size: 22px;
@@ -653,6 +624,7 @@
       color: var(--brown-dark);
       margin-bottom: 8px;
     }
+
     .product-desc {
       font-family: var(--sans);
       font-size: 13px;
@@ -661,23 +633,37 @@
       line-height: 1.7;
     }
 
+    /* ─── FILTRAGE CRÉATIONS ─── */
+
+    .product-card.hidden {
+      opacity: 0.18;
+      filter: grayscale(60%);
+      transform: scale(0.97);
+      pointer-events: none;
+    }
+    .product-card.highlighted { box-shadow: 0 0 0 2px var(--gold), 0 24px 60px rgba(59,31,10,0.14); }
+    .creations-grid.filtered .product-card:first-child { grid-column: span 1; }
+    .creations-grid.filtered .product-card:first-child .product-img { height: 280px; font-size: 64px; }
+
     /* ─── SPÉCIALITÉS ─── */
+
     .specialites {
       background: var(--brown-dark);
       color: var(--cream);
       position: relative;
       overflow: hidden;
     }
+
     .specialites::before {
       content: '';
       position: absolute;
-      top: -50%; right: -20%;
+      top: -50%;
+      right: -20%;
       width: 70%;
       height: 200%;
       background: radial-gradient(ellipse, rgba(201,168,76,0.08) 0%, transparent 70%);
       pointer-events: none;
     }
-
     .specialites .section-eyebrow::before { background: var(--gold); }
     .specialites .section-title { color: var(--cream); }
     .specialites .section-title em { color: var(--gold); }
@@ -699,10 +685,12 @@
       position: relative;
       overflow: hidden;
     }
+
     .spec-card::before {
       content: '';
       position: absolute;
-      bottom: 0; left: 0;
+      bottom: 0;
+      left: 0;
       width: 100%;
       height: 2px;
       background: linear-gradient(90deg, var(--gold), transparent);
@@ -713,7 +701,12 @@
     .spec-card:hover { background: rgba(201,168,76,0.06); }
     .spec-card:hover::before { transform: scaleX(1); }
 
-    .spec-emoji { font-size: 48px; margin-bottom: 24px; display: block; }
+    .spec-emoji {
+      font-size: 48px;
+      margin-bottom: 24px;
+      display: block;
+    }
+
     .spec-label {
       font-family: var(--sans);
       font-size: 10px;
@@ -723,6 +716,7 @@
       color: var(--gold);
       margin-bottom: 10px;
     }
+
     .spec-name {
       font-family: var(--serif);
       font-size: 32px;
@@ -731,6 +725,7 @@
       margin-bottom: 16px;
       line-height: 1.1;
     }
+
     .spec-desc {
       font-family: var(--sans);
       font-size: 14px;
@@ -738,6 +733,7 @@
       color: rgba(253,246,236,0.65);
       line-height: 1.8;
     }
+
     .spec-badge {
       display: inline-flex;
       align-items: center;
@@ -756,6 +752,7 @@
     }
 
     /* ─── COMMANDE ─── */
+
     .commande {
       background: var(--beige);
       display: grid;
@@ -763,10 +760,8 @@
       gap: 80px;
       align-items: start;
     }
+    .form-group { margin-bottom: 24px; }
 
-    .form-group {
-      margin-bottom: 24px;
-    }
     .form-label {
       font-family: var(--sans);
       font-size: 11px;
@@ -777,6 +772,7 @@
       margin-bottom: 8px;
       display: block;
     }
+
     .form-input, .form-select, .form-textarea {
       width: 100%;
       background: var(--white);
@@ -790,12 +786,14 @@
       transition: border-color 0.2s;
       appearance: none;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--gold);
-    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
     .form-textarea { height: 120px; resize: vertical; }
 
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
 
     .form-submit {
       width: 100%;
@@ -813,8 +811,8 @@
       transition: background 0.2s;
     }
     .form-submit:hover { background: var(--brown-dark); }
-
     .commande-info { padding-top: 20px; }
+
     .commande-info h3 {
       font-family: var(--serif);
       font-size: 42px;
@@ -824,6 +822,7 @@
       margin: 16px 0 24px;
     }
     .commande-info h3 em { font-style: italic; color: var(--brown); }
+
     .commande-info p {
       font-family: var(--sans);
       font-size: 14px;
@@ -838,11 +837,13 @@
       flex-direction: column;
       gap: 16px;
     }
+
     .commande-feature {
       display: flex;
       align-items: flex-start;
       gap: 16px;
     }
+
     .feature-icon {
       width: 40px;
       height: 40px;
@@ -854,6 +855,7 @@
       flex-shrink: 0;
       font-size: 18px;
     }
+
     .feature-text strong {
       display: block;
       font-family: var(--serif);
@@ -862,6 +864,7 @@
       color: var(--brown-dark);
       margin-bottom: 2px;
     }
+
     .feature-text span {
       font-family: var(--sans);
       font-size: 13px;
@@ -869,7 +872,8 @@
       color: var(--text-light);
     }
 
-    /* ─── HORAIRES ─── */
+    /* ─── INFOS ─── */
+
     .infos {
       background: var(--white);
       display: grid;
@@ -877,11 +881,8 @@
       gap: 80px;
       align-items: start;
     }
+    .horaires-grid { margin-top: 40px; border: 1px solid var(--beige-mid); }
 
-    .horaires-grid {
-      margin-top: 40px;
-      border: 1px solid var(--beige-mid);
-    }
     .horaires-row {
       display: flex;
       justify-content: space-between;
@@ -892,6 +893,7 @@
     }
     .horaires-row:last-child { border-bottom: none; }
     .horaires-row:hover { background: var(--cream); }
+
     .horaires-day {
       font-family: var(--sans);
       font-size: 13px;
@@ -900,11 +902,13 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
+
     .horaires-time {
       font-family: var(--serif);
       font-size: 15px;
       color: var(--text-light);
     }
+
     .horaires-closed {
       font-family: var(--sans);
       font-size: 12px;
@@ -922,6 +926,7 @@
       overflow: hidden;
       border: 1px solid var(--beige-mid);
     }
+
     .map-placeholder iframe {
       position: absolute;
       inset: 0;
@@ -937,21 +942,25 @@
       flex-direction: column;
       gap: 16px;
     }
+
     .contact-item {
       display: flex;
       align-items: center;
       gap: 16px;
     }
+
     .contact-item-icon {
       font-size: 20px;
       width: 36px;
       text-align: center;
     }
+
     .contact-item-text {
       font-family: var(--sans);
       font-size: 14px;
       color: var(--text-light);
     }
+
     .contact-item-text a {
       color: var(--brown);
       text-decoration: none;
@@ -961,18 +970,15 @@
     .contact-item-text a:hover { color: var(--gold); }
 
     /* ─── FOOTER ─── */
-    footer {
-      background: var(--brown-dark);
-      padding: 64px 80px 32px;
-    }
+    footer { background: var(--brown-dark); padding: 64px 80px 32px; }
 
-    /* Brand block */
     .footer-brand-block {
       margin-bottom: 56px;
       padding-bottom: 48px;
       border-bottom: 1px solid rgba(201,168,76,0.15);
       max-width: 320px;
     }
+
     .footer-brand-name {
       font-family: var(--serif);
       font-size: 28px;
@@ -980,6 +986,7 @@
       color: var(--cream);
       margin-bottom: 8px;
     }
+
     .footer-brand-sub {
       font-family: var(--sans);
       font-size: 11px;
@@ -988,6 +995,7 @@
       color: var(--gold);
       margin-bottom: 20px;
     }
+
     .footer-brand-desc {
       font-family: var(--sans);
       font-size: 13px;
@@ -995,11 +1003,13 @@
       color: rgba(253,246,236,0.5);
       line-height: 1.8;
     }
+
     .footer-socials {
       display: flex;
       gap: 12px;
       margin-top: 24px;
     }
+
     .social-btn {
       width: 36px;
       height: 36px;
@@ -1014,7 +1024,6 @@
     }
     .social-btn:hover { border-color: var(--gold); background: rgba(201,168,76,0.1); }
 
-    /* Colonnes desktop */
     .footer-cols {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
@@ -1024,32 +1033,6 @@
       border-bottom: 1px solid rgba(201,168,76,0.15);
     }
 
-    /* Toggle button (visible seulement mobile) */
-    .footer-col-toggle {
-      display: none;
-    }
-
-    /* Chevron */
-    .footer-chevron {
-      width: 16px;
-      height: 16px;
-      transition: transform 0.3s;
-      flex-shrink: 0;
-    }
-    .footer-col-toggle[aria-expanded="true"] .footer-chevron {
-      transform: rotate(180deg);
-    }
-
-    /* Titre desktop visible via pseudo */
-    .footer-col::before {
-      content: attr(data-title);
-    }
-    .footer-col > .footer-col-toggle { display: none; }
-
-    /* h4 desktop simulé par le toggle caché */
-    .footer-col .footer-col-toggle + ul { display: flex; flex-direction: column; gap: 10px; }
-
-    /* Titres colonnes desktop */
     .footer-col-toggle {
       font-family: var(--sans);
       font-size: 11px;
@@ -1068,12 +1051,22 @@
       justify-content: space-between;
       width: 100%;
     }
+
+    .footer-chevron {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s;
+      flex-shrink: 0;
+    }
+    .footer-col-toggle[aria-expanded="true"] .footer-chevron { transform: rotate(180deg); }
+
     .footer-col-list {
       list-style: none;
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
+
     .footer-col-list a {
       font-family: var(--sans);
       font-size: 13px;
@@ -1089,6 +1082,7 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .footer-bottom p {
       font-family: var(--sans);
       font-size: 12px;
@@ -1096,7 +1090,8 @@
     }
     .footer-bottom p span { color: rgba(201,168,76,0.6); }
 
-    /* ─── SCROLL INDICATOR ─── */
+    /* ─── UTILITAIRES ─── */
+
     .scroll-progress {
       position: fixed;
       top: 72px;
@@ -1107,7 +1102,6 @@
       transition: width 0.1s;
     }
 
-    /* ─── MOBILE MOCKUP LABEL ─── */
     .mockup-label {
       position: fixed;
       bottom: 24px;
@@ -1126,29 +1120,16 @@
     }
 
     /* ─── ANIMATIONS ─── */
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(24px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(-12px); }
-    }
-    @keyframes floatRandom {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      33%       { transform: translateY(-8px) rotate(5deg); }
-      66%       { transform: translateY(4px) rotate(-3deg); }
-    }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+    @keyframes floatRandom { 0%, 100% { transform: translateY(0) rotate(0deg); } 33% { transform: translateY(-8px) rotate(5deg); } 66% { transform: translateY(4px) rotate(-3deg); } }
 
     .reveal {
       opacity: 0;
       transform: translateY(32px);
       transition: opacity 0.7s, transform 0.7s;
     }
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.1s; }
     .reveal-delay-2 { transition-delay: 0.2s; }
     .reveal-delay-3 { transition-delay: 0.3s; }
@@ -1160,30 +1141,32 @@
       nav { padding: 0 28px; }
       .nav-links { gap: 20px; }
       .nav-links a { font-size: 11px; }
-
       .hero { grid-template-columns: 1fr; min-height: auto; }
       .hero-left { padding: 100px 40px 60px; }
       .hero-right { height: 420px; position: relative; }
       .hero-image-grid { position: absolute; inset: 0; }
 
-      .gold-band { padding: 16px 28px; gap: 16px; flex-wrap: wrap; justify-content: center; }
+    .gold-band {
+      padding: 16px 28px;
+      gap: 16px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
       .gold-band-sep { display: none; }
-
       section { padding: 72px 40px; }
-
       .histoire { grid-template-columns: 1fr; gap: 48px; }
       .histoire-visual { height: 340px; }
 
-      .creations-header { flex-direction: column; align-items: flex-start; gap: 24px; }
-
+    .creations-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+    }
       .specialites-grid { grid-template-columns: 1fr 1fr; }
       .spec-card { padding: 32px; }
-
       .commande { grid-template-columns: 1fr; gap: 48px; }
       .commande-info { padding-top: 0; }
-
       .infos { grid-template-columns: 1fr; gap: 48px; }
-
       .footer-cols { grid-template-columns: 1fr 1fr; gap: 32px; }
       footer { padding: 48px 40px 24px; }
       .footer-brand-block { max-width: 100%; }
@@ -1193,7 +1176,6 @@
        RESPONSIVE — MOBILE (≤ 768px)
     ═══════════════════════════════════════════ */
     @media (max-width: 768px) {
-      /* ── Nav mobile ── */
       nav { padding: 0 20px; height: 64px; }
       .nav-links { display: none; }
       .nav-hamburger {
@@ -1215,164 +1197,196 @@
       .nav-hamburger.open span:nth-child(2) { opacity: 0; }
       .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-      /* Mobile menu drawer */
-      .nav-mobile-menu {
-        position: fixed;
-        top: 64px; left: 0; right: 0;
-        background: var(--cream);
-        border-bottom: 1px solid var(--beige-mid);
-        padding: 0;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.4s ease, padding 0.3s;
-        z-index: 99;
-        box-shadow: 0 8px 24px rgba(59,31,10,0.08);
-      }
-      .nav-mobile-menu.open {
-        max-height: 400px;
-        padding: 16px 0 24px;
-      }
-      .nav-mobile-menu a {
-        display: block;
-        font-family: var(--sans);
-        font-size: 13px;
-        font-weight: 500;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-        color: var(--brown);
-        text-decoration: none;
-        padding: 14px 24px;
-        border-bottom: 1px solid var(--beige);
-        transition: background 0.2s, color 0.2s;
-      }
+    .nav-mobile-menu {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      background: var(--cream);
+      border-bottom: 1px solid var(--beige-mid);
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s;
+      z-index: 99;
+      box-shadow: 0 8px 24px rgba(59,31,10,0.08);
+    }
+      .nav-mobile-menu.open { max-height: 400px; padding: 16px 0 24px; }
+
+    .nav-mobile-menu a {
+      display: block;
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--brown);
+      text-decoration: none;
+      padding: 14px 24px;
+      border-bottom: 1px solid var(--beige);
+      transition: background 0.2s, color 0.2s;
+    }
       .nav-mobile-menu a:hover { background: var(--beige); }
-      .nav-mobile-menu a.nav-cta {
-        margin: 16px 24px 0;
-        background: var(--brown);
-        color: var(--cream) !important;
-        text-align: center;
-        border-radius: 2px;
-        border-bottom: none;
-        padding: 14px 24px;
-      }
 
-      /* ── Scroll progress ── */
+    .nav-mobile-menu a.nav-cta {
+      margin: 16px 24px 0;
+      background: var(--brown);
+      color: var(--cream) !important;
+      text-align: center;
+      border-radius: 2px;
+      border-bottom: none;
+      padding: 14px 24px;
+    }
       .scroll-progress { top: 64px; }
-
-      /* ── Hero ── */
       .hero { padding-top: 64px; }
       .hero-left { padding: 48px 20px 40px; }
       .hero-title { font-size: clamp(40px, 10vw, 56px); }
       .hero-desc { font-size: 14px; }
-      .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
-      .hero-badges { gap: 20px; margin-top: 40px; padding-top: 28px; }
+
+    .hero-actions {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 16px;
+    }
+
+    .hero-badges {
+      gap: 20px;
+      margin-top: 40px;
+      padding-top: 28px;
+    }
       .badge-num { font-size: 28px; }
       .hero-right { height: 300px; }
-
-      /* ── Gold band ── */
       .gold-band { padding: 14px 20px; gap: 12px; }
       .gold-band-item span { font-size: 10px; letter-spacing: 0.08em; }
-      .gold-band-item svg { width: 14px; height: 14px; flex-shrink: 0; }
 
-      /* ── Sections ── */
+    .gold-band-item svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
       section { padding: 56px 20px; }
       .section-title { font-size: clamp(30px, 8vw, 44px); }
 
-      /* ── Histoire ── */
-      .histoire { grid-template-columns: 1fr; gap: 36px; padding: 56px 20px; }
+    .histoire {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 56px 20px;
+    }
       .histoire-visual { height: 280px; }
-      .histoire-img-main { font-size: 56px; }
-      .histoire-img-secondary { font-size: 36px; }
       .histoire-badge { padding: 14px 18px; }
       .histoire-badge-num { font-size: 36px; }
       .histoire-signature { font-size: 22px; }
 
-      /* ── Créations ── */
-      .creations-header { flex-direction: column; align-items: flex-start; gap: 20px; margin-bottom: 32px; }
-      .filter-tabs { flex-wrap: wrap; gap: 6px; background: transparent; padding: 0; }
-      .filter-tab { padding: 7px 14px; border: 1px solid var(--beige-mid); border-radius: 20px; }
+    .creations-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      margin-bottom: 32px;
+    }
+
+    .filter-tabs {
+      flex-wrap: wrap;
+      gap: 6px;
+      background: transparent;
+      padding: 0;
+    }
+
+    .filter-tab {
+      padding: 7px 14px;
+      border: 1px solid var(--beige-mid);
+      border-radius: 20px;
+    }
       .filter-tab.active { border-color: var(--brown); background: var(--brown); }
       .creations-grid { grid-template-columns: 1fr; gap: 16px; }
       .product-card:first-child { grid-column: span 1; }
       .product-card:first-child .product-img { height: 240px; font-size: 72px; }
       .product-img { height: 200px; font-size: 52px; }
-
-      /* ── Spécialités ── */
       .specialites { padding: 56px 20px; }
       .specialites-grid { grid-template-columns: 1fr; gap: 2px; }
       .spec-card { padding: 28px 24px; }
       .spec-emoji { font-size: 36px; margin-bottom: 16px; }
       .spec-name { font-size: 26px; }
 
-      /* ── Commande ── */
-      .commande { grid-template-columns: 1fr; gap: 36px; padding: 56px 20px; }
+    .commande {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 56px 20px;
+    }
       .commande-info h3 { font-size: 32px; }
       .form-row { grid-template-columns: 1fr; gap: 0; }
       .form-row > div { margin-bottom: 0; }
       .form-group { margin-bottom: 16px; }
 
-      /* ── Infos ── */
-      .infos { grid-template-columns: 1fr; gap: 36px; padding: 56px 20px; }
+    .infos {
+      grid-template-columns: 1fr;
+      gap: 36px;
+      padding: 56px 20px;
+    }
       .map-placeholder { height: 280px; }
       .horaires-row { padding: 14px 16px; }
-
-      /* ── Footer ── */
       footer { padding: 40px 0 0; }
-      .footer-brand-block {
-        max-width: 100%;
-        margin: 0 0 0;
-        padding: 0 20px 28px;
-        border-bottom: 1px solid rgba(201,168,76,0.15);
-      }
-      .footer-brand-desc { max-width: 100%; }
-      .footer-cols {
-        display: block;
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-      }
-      /* Accordéon mobile */
-      .footer-col {
-        border-bottom: 1px solid rgba(201,168,76,0.12);
-      }
-      .footer-col-toggle {
-        display: flex !important;
-        pointer-events: auto !important;
-        cursor: pointer !important;
-        padding: 18px 20px !important;
-        margin-bottom: 0 !important;
-        font-size: 13px !important;
-        letter-spacing: 0.1em !important;
-        color: var(--cream) !important;
-        background: none !important;
-        border: none !important;
-        width: 100% !important;
-      }
-      .footer-col-toggle:hover { background: rgba(255,255,255,0.03) !important; }
-      .footer-col-list {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.35s ease, padding 0.3s;
-        padding: 0 20px;
-        gap: 0;
-      }
-      .footer-col-list.open {
-        max-height: 300px;
-        padding: 4px 20px 20px;
-        gap: 14px;
-      }
-      .footer-col-list a { font-size: 14px; }
-      .footer-bottom {
-        flex-direction: column;
-        gap: 6px;
-        text-align: center;
-        padding: 24px 20px;
-        border-top: 1px solid rgba(201,168,76,0.12);
-        margin-top: 0;
-      }
 
-      /* ── Mockup label ── */
-      .mockup-label { bottom: 12px; right: 12px; font-size: 9px; padding: 8px 14px; }
+    .footer-brand-block {
+      max-width: 100%;
+      margin: 0;
+      padding: 0 20px 28px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+      .footer-brand-desc { max-width: 100%; }
+
+    .footer-cols {
+      display: block;
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+      .footer-col { border-bottom: 1px solid rgba(201,168,76,0.12); }
+
+    .footer-col-toggle {
+      display: flex !important;
+      pointer-events: auto !important;
+      cursor: pointer !important;
+      padding: 18px 20px !important;
+      margin-bottom: 0 !important;
+      font-size: 13px !important;
+      letter-spacing: 0.1em !important;
+      color: var(--cream) !important;
+      background: none !important;
+      border: none !important;
+      width: 100% !important;
+    }
+      .footer-col-toggle:hover { background: rgba(255,255,255,0.03) !important; }
+
+    .footer-col-list {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.3s;
+      padding: 0 20px;
+      gap: 0;
+    }
+
+    .footer-col-list.open {
+      max-height: 300px;
+      padding: 4px 20px 20px;
+      gap: 14px;
+    }
+      .footer-col-list a { font-size: 14px; }
+
+    .footer-bottom {
+      flex-direction: column;
+      gap: 6px;
+      text-align: center;
+      padding: 24px 20px;
+      border-top: 1px solid rgba(201,168,76,0.12);
+      margin-top: 0;
+    }
+
+    .mockup-label {
+      bottom: 12px;
+      right: 12px;
+      font-size: 9px;
+      padding: 8px 14px;
+    }
     }
 
     /* ═══════════════════════════════════════════
@@ -1383,17 +1397,19 @@
       .btn-primary { padding: 14px 24px; font-size: 10px; }
       .hero-badges { flex-wrap: wrap; gap: 16px; }
       .spec-card { padding: 22px 18px; }
-      .gold-band { flex-direction: column; align-items: flex-start; gap: 8px; padding: 14px 16px; }
-    }
 
+    .gold-band {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 14px 16px;
+    }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Scroll progress -->
   <div class="scroll-progress" id="scrollProgress"></div>
-
-  <!-- Mockup badge -->
   <div class="mockup-label">Maquette — Studio 19.21</div>
 
   <!-- ─── NAVIGATION ─── -->
@@ -1437,48 +1453,26 @@
         <a href="#creations" class="btn-primary">Découvrir nos créations</a>
         <a href="#commande" class="btn-ghost">
           Commander un gâteau
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M5 12h14M12 5l7 7-7 7"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
       <div class="hero-badges">
-        <div class="badge">
-          <span class="badge-num">40+</span>
-          <span class="badge-label">Années de tradition</span>
-        </div>
-        <div class="badge">
-          <span class="badge-num">5</span>
-          <span class="badge-label">Artisans passionnés</span>
-        </div>
-        <div class="badge">
-          <span class="badge-num">100%</span>
-          <span class="badge-label">Fait maison</span>
-        </div>
+        <div class="badge"><span class="badge-num">40+</span><span class="badge-label">Années de tradition</span></div>
+        <div class="badge"><span class="badge-num">5</span><span class="badge-label">Artisans passionnés</span></div>
+        <div class="badge"><span class="badge-num">100%</span><span class="badge-label">Fait maison</span></div>
       </div>
     </div>
-
     <div class="hero-right">
       <div class="hero-image-grid">
         <div class="hero-img-main">
-          <div class="pastry-visual">
-            <div class="floating-elements">
-              <span class="float-item">🌸</span>
-              <span class="float-item">✨</span>
-              <span class="float-item">🍃</span>
-              <span class="float-item">⭐</span>
-            </div>
-            <div class="pastry-plate">
-              <span class="pastry-emoji">🎂</span>
-            </div>
-          </div>
+          <img src="https://www.annonay-plus.com/wp-content/uploads/2024/10/olagnon-0004.jpg" alt="Vitrine Pâtisserie Olagnon" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>
         <div class="hero-img-bottom">
-          <div class="hero-img-thumb product-img-2" data-label="Chocolaterie">
-            🍫
+          <div class="hero-img-thumb" data-label="La boutique" style="padding:0;overflow:hidden;">
+            <img src="https://www.annonay-plus.com/wp-content/uploads/2024/10/olagnon-0007.jpg" alt="Boutique Olagnon" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
-          <div class="hero-img-thumb" style="background: linear-gradient(135deg,#B0D8F0,#6AABCE)" data-label="Glacier">
-            🍦
+          <div class="hero-img-thumb" data-label="Nos créations" style="padding:0;overflow:hidden;">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMVWrjg1LcBo9yIGyPyLtdIIM1-ZxtAaYEUbqva=s680-w680-h510-rw" alt="Créations Olagnon" style="width:100%;height:100%;object-fit:cover;display:block;" />
           </div>
         </div>
       </div>
@@ -1511,17 +1505,19 @@
   <!-- ─── HISTOIRE ─── -->
   <section class="histoire" id="histoire">
     <div class="histoire-visual reveal">
-      <div class="histoire-img-main">🏪</div>
+      <div class="histoire-img-main">
+        <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweqLJaLYBHkM477hD0llrL-8UCGVvhYrqJk-N_QypJJfdNWaHQxxnCW0YZCEv5jW1NTGMZSc67VajJLIVUClnXccGVOeFBkYEpTYL3djXRxrTyrUinc59mqcxGyGKGSKtYDFZYZfyg=s680-w680-h510-rw " alt="Pâtisserie Olagnon" style="width:100%;height:100%;object-fit:cover;display:block;" />
+      </div>
       <div class="histoire-badge">
         <div class="histoire-badge-num">40+</div>
         <div class="histoire-badge-label">ans de tradition</div>
       </div>
-      <div class="histoire-img-secondary" style="display:flex;align-items:center;justify-content:center;font-size:48px;">👨‍🍳</div>
+      <div class="histoire-img-secondary">
+        <img src="https://www.annonay-plus.com/wp-content/uploads/2021/05/Portrait-3.jpg" alt="Muriel et Antoine Meyrand" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;" />
+      </div>
     </div>
     <div class="histoire-content">
-      <div class="section-eyebrow reveal">
-        <span>Notre maison</span>
-      </div>
+      <div class="section-eyebrow reveal"><span>Notre maison</span></div>
       <h2 class="section-title reveal reveal-delay-1">Une histoire de<br><em>famille & passion</em></h2>
       <p class="reveal reveal-delay-2">
         Tout commence avec <strong>Jean-Paul et Anne-Marie Olagnon</strong>, qui après 14 années au côté d'Émile et Suzanne Marmey, reprennent la pâtisserie à leur compte. Ensemble, ils développent l'entreprise, passant d'un apprenti à cinq collaborateurs.
@@ -1529,9 +1525,7 @@
       <p class="reveal reveal-delay-2">
         Aujourd'hui, c'est <strong>Muriel et Antoine</strong>, leur fille et leur gendre, qui perpétuent cette tradition familiale. Même adresse, même exigence, même amour du beau geste et des saveurs authentiques de l'Ardèche.
       </p>
-      <div class="histoire-signature reveal reveal-delay-3">
-        Muriel & Antoine Meyrand
-      </div>
+      <div class="histoire-signature reveal reveal-delay-3">Muriel & Antoine Meyrand</div>
     </div>
   </section>
 
@@ -1539,24 +1533,22 @@
   <section class="creations" id="creations">
     <div class="creations-header">
       <div>
-        <div class="section-eyebrow reveal">
-          <span>Nos créations</span>
-        </div>
+        <div class="section-eyebrow reveal"><span>Nos créations</span></div>
         <h2 class="section-title reveal reveal-delay-1">Fait maison,<br><em>chaque matin</em></h2>
       </div>
       <div class="filter-tabs reveal">
-        <button class="filter-tab active">Tout</button>
-        <button class="filter-tab">Pâtisseries</button>
-        <button class="filter-tab">Chocolats</button>
-        <button class="filter-tab">Glaces</button>
-        <button class="filter-tab">Viennoiseries</button>
+        <button class="filter-tab active" data-filter="tout">Tout</button>
+        <button class="filter-tab" data-filter="patisserie">Pâtisseries</button>
+        <button class="filter-tab" data-filter="chocolat">Chocolats</button>
+        <button class="filter-tab" data-filter="glace">Glaces</button>
+        <button class="filter-tab" data-filter="viennoiserie">Viennoiseries</button>
       </div>
     </div>
     <div class="creations-grid">
-      <div class="product-card reveal">
-        <div class="product-img product-img-1">
+      <div class="product-card reveal" data-category="patisserie">
+        <div class="product-img product-img-1" style="padding:0;position:relative;">
           <span class="product-tag">⭐ Spécialité</span>
-          🎂
+          <img src="https://www.annonay-plus.com/wp-content/uploads/2024/10/olagnon-0004.jpg" alt="Lou Pisadou" style="width:100%;height:100%;object-fit:cover;display:block;" />
         </div>
         <div class="product-body">
           <div class="product-cat">Pâtisserie · Création signature</div>
@@ -1564,15 +1556,17 @@
           <div class="product-desc">Notre spécialité ardéchoise labellisée « Goûtez l'Ardèche ». Une recette unique, symbole de notre terroir et de notre savoir-faire.</div>
         </div>
       </div>
-      <div class="product-card reveal reveal-delay-1">
-        <div class="product-img product-img-2">🍫</div>
+      <div class="product-card reveal reveal-delay-1" data-category="chocolat">
+        <div class="product-img product-img-2" style="padding:0;overflow:hidden;">
+           <img src="https://www.annonay-plus.com/wp-content/uploads/2024/10/olagnon-0020.jpg" alt="Chocolats Olagnon" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
         <div class="product-body">
           <div class="product-cat">Chocolaterie</div>
           <div class="product-name">Chocolats fins</div>
           <div class="product-desc">Ganaches, truffes et pralinés élaborés avec les meilleures origines de cacao.</div>
         </div>
       </div>
-      <div class="product-card reveal reveal-delay-1">
+      <div class="product-card reveal reveal-delay-1" data-category="glace">
         <div class="product-img product-img-3">🍦</div>
         <div class="product-body">
           <div class="product-cat">Glacier</div>
@@ -1580,15 +1574,17 @@
           <div class="product-desc">Sorbets et crèmes glacées fabriqués maison avec des fruits de saison.</div>
         </div>
       </div>
-      <div class="product-card reveal reveal-delay-2">
-        <div class="product-img product-img-4">🥐</div>
+      <div class="product-card reveal reveal-delay-2" data-category="viennoiserie">
+        <div class="product-img product-img-2" style="padding:0;overflow:hidden;">
+           <img src="https://lh3.googleusercontent.com/gps-cs-s/AHVAweq2XRQchyhP3Pank-Qo79RV6rs0ooicDdU2ld6kZ1qCFRE9xJLUgMOtM0jfXJp3ydiSmAbNXmH32HH9ZTCAsO8ArWU0zH7iSUluzA2URWbYW-eAy5FMSjHI1jYHOTl9y_f5qOZ5W00Xbtg=w980-h700-n-k-no-nu" alt="Chocolats Olagnon" style="width:100%;height:100%;object-fit:cover;display:block;" />
+        </div>
         <div class="product-body">
           <div class="product-cat">Viennoiseries</div>
           <div class="product-name">Viennoiseries du matin</div>
           <div class="product-desc">Croissants, pains au chocolat et brioches fraîchement préparés dès 7h.</div>
         </div>
       </div>
-      <div class="product-card reveal reveal-delay-2">
+      <div class="product-card reveal reveal-delay-2" data-category="patisserie">
         <div class="product-img" style="background:linear-gradient(145deg,#F0E0C8,#D8C0A0);">🧁</div>
         <div class="product-body">
           <div class="product-cat">Petits fours</div>
@@ -1601,9 +1597,7 @@
 
   <!-- ─── SPÉCIALITÉS ─── -->
   <section class="specialites" id="specialites">
-    <div class="section-eyebrow reveal">
-      <span>Terroir & Patrimoine</span>
-    </div>
+    <div class="section-eyebrow reveal"><span>Terroir & Patrimoine</span></div>
     <h2 class="section-title reveal reveal-delay-1">Nos spécialités<br><em>ardéchoises</em></h2>
     <div class="specialites-grid">
       <div class="spec-card reveal">
@@ -1640,9 +1634,7 @@
   <!-- ─── COMMANDE ─── -->
   <section class="commande" id="commande">
     <div class="commande-info">
-      <div class="section-eyebrow reveal">
-        <span>Commandes spéciales</span>
-      </div>
+      <div class="section-eyebrow reveal"><span>Commandes spéciales</span></div>
       <h3 class="reveal reveal-delay-1">Votre événement,<br><em>notre passion</em></h3>
       <p class="reveal reveal-delay-2">
         Mariages, anniversaires, baptêmes, pots d'entreprise… Confiez-nous votre événement. Nous créerons pour vous une pièce montée ou un buffet sucré à votre image.
@@ -1650,51 +1642,29 @@
       <div class="commande-features reveal reveal-delay-2">
         <div class="commande-feature">
           <div class="feature-icon">💬</div>
-          <div class="feature-text">
-            <strong>Réponse sous 48h</strong>
-            <span>Nous vous recontactons rapidement pour définir votre projet</span>
-          </div>
+          <div class="feature-text"><strong>Réponse sous 48h</strong><span>Nous vous recontactons rapidement pour définir votre projet</span></div>
         </div>
         <div class="commande-feature">
           <div class="feature-icon">✏️</div>
-          <div class="feature-text">
-            <strong>Création sur-mesure</strong>
-            <span>Chaque pièce est unique, élaborée selon vos goûts et votre budget</span>
-          </div>
+          <div class="feature-text"><strong>Création sur-mesure</strong><span>Chaque pièce est unique, élaborée selon vos goûts et votre budget</span></div>
         </div>
         <div class="commande-feature">
           <div class="feature-icon">🚗</div>
-          <div class="feature-text">
-            <strong>Livraison possible</strong>
-            <span>Nous nous déplaçons selon votre lieu de réception (sur devis)</span>
-          </div>
+          <div class="feature-text"><strong>Livraison possible</strong><span>Nous nous déplaçons selon votre lieu de réception (sur devis)</span></div>
         </div>
       </div>
     </div>
-
     <div class="reveal reveal-delay-1">
       <div class="form-group">
         <div class="form-row">
-          <div>
-            <label class="form-label">Prénom</label>
-            <input type="text" class="form-input" placeholder="Marie" />
-          </div>
-          <div>
-            <label class="form-label">Nom</label>
-            <input type="text" class="form-input" placeholder="Dupont" />
-          </div>
+          <div><label class="form-label">Prénom</label><input type="text" class="form-input" placeholder="Marie" /></div>
+          <div><label class="form-label">Nom</label><input type="text" class="form-input" placeholder="Dupont" /></div>
         </div>
       </div>
       <div class="form-group">
         <div class="form-row">
-          <div>
-            <label class="form-label">Téléphone</label>
-            <input type="tel" class="form-input" placeholder="06 12 34 56 78" />
-          </div>
-          <div>
-            <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="marie@email.com" />
-          </div>
+          <div><label class="form-label">Téléphone</label><input type="tel" class="form-input" placeholder="06 12 34 56 78" /></div>
+          <div><label class="form-label">Email</label><input type="email" class="form-input" placeholder="marie@email.com" /></div>
         </div>
       </div>
       <div class="form-group">
@@ -1709,14 +1679,8 @@
       </div>
       <div class="form-group">
         <div class="form-row">
-          <div>
-            <label class="form-label">Date souhaitée</label>
-            <input type="date" class="form-input" />
-          </div>
-          <div>
-            <label class="form-label">Nombre de personnes</label>
-            <input type="number" class="form-input" placeholder="80" />
-          </div>
+          <div><label class="form-label">Date souhaitée</label><input type="date" class="form-input" /></div>
+          <div><label class="form-label">Nombre de personnes</label><input type="number" class="form-input" placeholder="80" /></div>
         </div>
       </div>
       <div class="form-group">
@@ -1730,18 +1694,16 @@
   <!-- ─── INFOS PRATIQUES ─── -->
   <section class="infos" id="infos">
     <div>
-      <div class="section-eyebrow reveal">
-        <span>Nous trouver</span>
-      </div>
+      <div class="section-eyebrow reveal"><span>Nous trouver</span></div>
       <h2 class="section-title reveal reveal-delay-1">Infos<br><em>pratiques</em></h2>
       <div class="horaires-grid reveal reveal-delay-2">
         <div class="horaires-row">
           <span class="horaires-day">Mardi – Vendredi</span>
-          <span class="horaires-time">7h – 12h · 13h30 – 19h</span>
+          <span class="horaires-time">7h – 12h30 · 13h30 – 19h</span>
         </div>
         <div class="horaires-row">
           <span class="horaires-day">Samedi</span>
-          <span class="horaires-time">7h – 12h · 13h30 – 18h30</span>
+          <span class="horaires-time">7h – 12h30 · 13h30 – 18h30</span>
         </div>
         <div class="horaires-row">
           <span class="horaires-day">Dimanche</span>
@@ -1767,14 +1729,11 @@
         </div>
       </div>
     </div>
-
     <div>
       <div class="map-placeholder reveal reveal-delay-1">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2809.2239364911406!2d4.668595976726461!3d45.24326424815229!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f513a70ebf6065%3A0xb38110646bd8a65a!2sPatisserie%20Olagnon!5e0!3m2!1sfr!2sfr!4v1773679633044!5m2!1sfr!2sfr"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
           title="Pâtisserie Olagnon — Annonay">
         </iframe>
       </div>
@@ -1783,7 +1742,6 @@
 
   <!-- ─── FOOTER ─── -->
   <footer>
-    <!-- Brand block (toujours visible) -->
     <div class="footer-brand-block">
       <div class="footer-brand-name">Pâtisserie Olagnon</div>
       <div class="footer-brand-sub">Annonay · Ardèche</div>
@@ -1793,8 +1751,6 @@
         <div class="social-btn">📷</div>
       </div>
     </div>
-
-    <!-- Colonnes desktop / accordéons mobile -->
     <div class="footer-cols">
       <div class="footer-col">
         <button class="footer-col-toggle" onclick="toggleFooter(this)" aria-expanded="false">
@@ -1836,7 +1792,6 @@
         </ul>
       </div>
     </div>
-
     <div class="footer-bottom">
       <p>© 2026 Pâtisserie Olagnon — Tous droits réservés</p>
       <p>Réalisé par <span>Studio 19.21</span> · Lyon</p>
@@ -1849,8 +1804,6 @@
     window.addEventListener('scroll', () => {
       const pct = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
       progressBar.style.width = pct + '%';
-
-      // Nav shadow
       document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 40);
     });
 
@@ -1861,11 +1814,29 @@
     }, { threshold: 0.12 });
     reveals.forEach(el => observer.observe(el));
 
-    // Filter tabs
+    // Filter tabs — filtrage réel avec mise en valeur
+    const grid = document.querySelector('.creations-grid');
     document.querySelectorAll('.filter-tab').forEach(tab => {
       tab.addEventListener('click', () => {
         document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
+        const filter = tab.dataset.filter;
+        const cards = document.querySelectorAll('.product-card');
+        if (filter === 'tout') {
+          grid.classList.remove('filtered');
+          cards.forEach(card => card.classList.remove('hidden', 'highlighted'));
+        } else {
+          grid.classList.add('filtered');
+          cards.forEach(card => {
+            if (card.dataset.category === filter) {
+              card.classList.remove('hidden');
+              card.classList.add('highlighted');
+            } else {
+              card.classList.remove('highlighted');
+              card.classList.add('hidden');
+            }
+          });
+        }
       });
     });
 
@@ -1880,7 +1851,6 @@
       document.getElementById('mobileMenu').classList.remove('open');
       document.getElementById('hamburger').classList.remove('open');
     }
-    // Close on outside click
     document.addEventListener('click', (e) => {
       const menu = document.getElementById('mobileMenu');
       const burger = document.getElementById('hamburger');
@@ -1895,20 +1865,20 @@
       if (window.innerWidth > 768) return;
       const list = btn.nextElementSibling;
       const isOpen = list.classList.contains('open');
-      // Fermer tous les autres
       document.querySelectorAll('.footer-col-list').forEach(l => l.classList.remove('open'));
       document.querySelectorAll('.footer-col-toggle').forEach(b => b.setAttribute('aria-expanded', 'false'));
-      // Ouvrir celui cliqué si c'était fermé
       if (!isOpen) {
         list.classList.add('open');
         btn.setAttribute('aria-expanded', 'true');
       }
     }
-    // Sur desktop, toujours montrer les listes
     function handleFooterResize() {
-      const lists = document.querySelectorAll('.footer-col-list');
       if (window.innerWidth > 768) {
-        lists.forEach(l => { l.style.maxHeight = ''; l.style.padding = ''; l.classList.remove('open'); });
+        document.querySelectorAll('.footer-col-list').forEach(l => {
+          l.style.maxHeight = '';
+          l.style.padding = '';
+          l.classList.remove('open');
+        });
       }
     }
     window.addEventListener('resize', handleFooterResize);
